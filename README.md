@@ -113,7 +113,13 @@ fig.text(0.125,-0.25, 'The figure for Track, shows Communication to have the hig
 
 plt.show()
 ```
-This line of code `fig, axes = plt.subplots(1,3)` essentially sets the 3 graphs stating how many rows (1) and how many columns (3) of graphs. The line of code `axes[].bar(_mean[''], _mean['Average'], color='skyblue',edgecolor='black')`
+This line of code `fig, axes = plt.subplots(1,3)` essentially sets the subplots/graphs stating how many rows (1) and how many columns (3), which results to 3 graphs in 1 row. The syntax `axes[]` uses a standard Python list indexing wherein it targets and modify a specific subplot within a multi-plot Matplotlib figure. Basically it targets one specific graph out of the 3 that was set. The indexes `0,1,2` represents the subplots or graphs from left to right with `0` being the starting plot from the left. 
+
+The function `.bar()` is where the data from the 3 data frames created are stored and displayed through a 2D bar image. Using this line of code `axes[0].bar(track_mean['Track'], track_mean['Average'],color='skyblue',edgecolor='black')` as an example, it is used to shape the bar of that specific graph. Using the data from `track_mean` and calling its 2 columns 
+
+
+
+
 
 README HISTORY:
 September 13 2026 Repository creation 
