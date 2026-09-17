@@ -32,7 +32,7 @@ In this line of code, the `Average` column was computed for by getting the mean 
 VisComm = board2.loc[(board2['Hometown']=='Visayas')&(board2['Track']=='Communication'),['Name','Gender','Math','Electronics','Average'],]
 VisComm
 ```
-Within the data frame `VisComm` is the stored data for students whose Hometown is Visayas and their Track is Communication with their Names, Gender, and their data under Math, Electronics, and their Averages. This line of code `VisComm = board2.loc[(board2['Hometown']=='Visayas')&(board2['Track']=='Communication'),['Name','Gender','Math','Electronics','Average'],]` uses the function `board2.loc` in order to find the students under Visayas and Communication with their respective data for the 5 specified columns.   
+Within the data frame `VisComm` is the stored data for students whose Hometown is Visayas and their Track is Communication with their Names, Gender, and their data under Math, Electronics, and their Averages. The line of code uses the function `board2.loc` in order to find the students under Visayas and Communication with their respective data for the 5 specified columns.   
 
 ```python
 print(f'Number of Rows: {len(VisComm)}')
@@ -52,12 +52,13 @@ Methods Used:
 VisFemale = board2.loc[(board2['Hometown']=='Visayas')&(board2['Gender']=='Female'),['Name','Track','GEAS','Electronics','Average'],]
 VisFemale 
 ```
+For this line of code, the data frame known as `VisFemale` has stored data containing specifically Females in Visayas with their Name, Track, and their data in GEAS, Electronics, and their Averages. Using the function `board2.loc` the specified conditions are done essentially locating the specified Hometown and Gender as well as the required columns and their data as shown in mentioned line of code. 
 
 ```python
 display(VisFemale)
 display(VisFemale.loc[(VisFemale['Average']>=60)])
 ```
-
+The first line of code displays the data in `VisFemale`, while the second line of code locates within the data frame averages greater than or equal to 60 with the use of the function `VisFemale.loc[(VisFemale['Average']>=60)]`.
 
 # C. CATEGORY-AVERAGE VISUALIZATION 
 Examine how the recorded Average differs across the three categorical features Track, Gender, and
@@ -82,6 +83,7 @@ display(track_mean)
 display(gender_mean)
 display(hometown_mean)
 ```
+There are 3 data frames named track_mean, gender_mean, and hometown_mean. The function `board2.groupby('')[''].mean().reset_index()` basically groups the 3 specified columns with their respective averages and computes their respective mean from their averages. 
 
 ```python
 fig, axes = plt.subplots(1,3, figsize=(18,5))
@@ -111,6 +113,7 @@ fig.text(0.125,-0.25, 'The figure for Track, shows Communication to have the hig
 
 plt.show()
 ```
+This line of code `fig, axes = plt.subplots(1,3)` essentially sets the 3 graphs stating how many rows (1) and how many columns (3) of graphs. The line of code `axes[].bar(_mean[''], _mean['Average'], color='skyblue',edgecolor='black')`
 
 README HISTORY:
 September 13 2026 Repository creation 
