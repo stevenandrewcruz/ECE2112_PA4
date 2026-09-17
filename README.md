@@ -38,7 +38,7 @@ Within the data frame `VisComm` is the stored data for students whose Hometown i
 print(f'Number of Rows: {len(VisComm)}')
 display(VisComm)
 ```
-This line of code displays both the contents of the data frame `VisComm` and prints the actual number of its rows with the use of the function `{len(VisComm)}` by measuring the number of rows within the data frame. The `f` function is used to print `Number of Rows: 5`. 
+This line of code displays both the contents of the data frame `VisComm` and prints the actual number of its rows with the use of the function `{len(VisComm)}` by measuring the number of rows within the data frame. The `f` function is used to help print the output `Number of Rows: 5`. 
 
 # B. VISAYAS FEMALE DATAFRAME 
 Create a second DataFrame named VisFemale containing students whose Hometown is Visayas and
@@ -52,7 +52,7 @@ Methods Used:
 VisFemale = board2.loc[(board2['Hometown']=='Visayas')&(board2['Gender']=='Female'),['Name','Track','GEAS','Electronics','Average'],]
 VisFemale 
 ```
-For this line of code, the data frame known as `VisFemale` has stored data containing specifically Females in Visayas with their Name, Track, and their data in GEAS, Electronics, and their Averages. Using the function `board2.loc` the specified conditions are done essentially locating the specified Hometown and Gender as well as the required columns and their data as shown in mentioned line of code. 
+For this line of code, the data frame known as `VisFemale` has stored data containing specifically Females in Visayas with their Name, Track, and their data in GEAS, Electronics, and their Averages. Using the function `board2.loc` the specified conditions are done essentially locating the specified Hometown and Gender as well as the required columns and their data as shown in the line of code. 
 
 ```python
 display(VisFemale)
@@ -87,7 +87,10 @@ There are 3 data frames named track_mean, gender_mean, and hometown_mean. The fu
 
 ```python
 fig, axes = plt.subplots(1,3, figsize=(18,5))
+```
+This line of code `fig, axes = plt.subplots(1,3)` essentially sets the subplots stating how many rows (1) and how many columns (3) are needed, which results to 3 graphs in 1 row. The syntax `axes[]` uses a standard Python list indexing wherein it targets and modify a specific subplot within a multi-plot Matplotlib figure. The indexes `0,1,2` represents the subplots or graphs from left to right with `0` being the starting plot from the left. 
 
+```python
 axes[0].bar(track_mean['Track'], track_mean['Average'], color='skyblue',edgecolor='black')
 axes[0].set_title('Mean Average by Track')
 axes[0].set_xlabel('Track')
@@ -105,7 +108,13 @@ axes[2].set_title('Mean Average by Hometown')
 axes[2].set_xlabel('Hometown')
 axes[2].set_ylabel('Mean Average')
 axes[2].set_ylim(0,80)
+```
 
+The function `.bar()` is where the data from the 3 data frames created can be displayed through a 2D bar image. Using this line of code `axes[0].bar(track_mean['Track'], track_mean['Average'],color='skyblue',edgecolor='black')` as an example, it is used to shape the bar of that specific graph. Using the data from `track_mean` and calling its 2 columns; `Track` and `Average` the data from the data frame is applied and displayed through a bar in the graph. Its appearance can be manipulated with `color='skyblue',edgecolor='black'` changing the color of the bar. 
+
+The functions `.set_title`, `.set_xlabel`, and `.set_ylable` are used to name the graphs. Using these lines of code `axes[0].set_title('Mean Average by Track'), axes[0].set_xlabel('Track'), axes[0].set_ylabel('Mean Average')` as examples, the `.set_title` is used to name the first graph with `Mean Average by Track`. This can be seen at the top of that specific graph, while `.set_xlabel('Track')` gives the x-axis the name `Track`, and `.set_ylabel('Mean Average')` gives the y-axis the name `Mean Average`. Finally, the function `.set_ylim(0,80)` is used to set the parameter of the bar graphs. It limits the y-axis values to only `80` to better see the differences between the data within each graphs. 
+
+```python
 fig.text(0.125,-0.1,'Interpretation:', weight='bold',size=13)
 fig.text(0.125,-0.25, 'The figure for Track, shows Communication to have the highst mean of (67.975).\n'
            'The figure for Gender, shows Male to have highest mean of (67.183333).\n'
@@ -113,19 +122,15 @@ fig.text(0.125,-0.25, 'The figure for Track, shows Communication to have the hig
 
 plt.show()
 ```
-This line of code `fig, axes = plt.subplots(1,3)` essentially sets the subplots/graphs stating how many rows (1) and how many columns (3), which results to 3 graphs in 1 row. The syntax `axes[]` uses a standard Python list indexing wherein it targets and modify a specific subplot within a multi-plot Matplotlib figure. Basically it targets one specific graph out of the 3 that was set. The indexes `0,1,2` represents the subplots or graphs from left to right with `0` being the starting plot from the left. 
-
-The function `.bar()` is where the data from the 3 data frames created are stored and displayed through a 2D bar image. Using this line of code `axes[0].bar(track_mean['Track'], track_mean['Average'],color='skyblue',edgecolor='black')` as an example, it is used to shape the bar of that specific graph. Using the data from `track_mean` and calling its 2 columns 
-
-
-
+In order to display the interpretation of the graph the function `fig.text()` was used. This function is used twice containing `0.125,-0.1,'Interpretation:', weight='bold',size=13` for the first and the second contains different coordinates `0.125,-0.25` with the actual interpretation of the graph. These coordinates specifically places them both beneath the row of the 3 graphs. As seen on the line of code the `Interpretation` is located slightly above the the actual interpretation of the graph. The interpretation states the highest mean for each graph. The line of code at the very bottom `plt.show` essentially displays all currently created Matplotlib figures on the screen.  
 
 
 README HISTORY:
 September 13 2026 Repository creation 
 September 13 2026 Uploaded Jupyter notebook and board2. xlsx file
 September 17 2026 Layout of Readme file 
-
+September 17 2026 Finalizing of Readme file
+September 18 2026 Minor editing 
 
 
 
