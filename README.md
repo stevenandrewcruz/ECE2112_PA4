@@ -126,11 +126,11 @@ In order to display the interpretation of the graph the function `fig.text()` wa
 
 
 README HISTORY:
-September 13 2026 Repository creation 
-September 13 2026 Uploaded Jupyter notebook and board2. xlsx file
-September 17 2026 Layout of Readme file 
-September 17 2026 Finalizing of Readme file
-September 18 2026 Minor editing 
+- September 13 2026 Repository creation 
+- September 13 2026 Uploaded Jupyter notebook and board2. xlsx file
+- September 17 2026 Layout of Readme file 
+- September 17 2026 Finalizing of Readme file
+- September 18 2026 Minor editing 
 
 
 
